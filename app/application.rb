@@ -20,15 +20,15 @@ class Application
       else
         @@cart.each do |cart|
           resp.write "#{cart}/n"
-        end 
-      end 
+        end
+      end
     elsif req.path.match(/add/)
       item_to_add = req.params["item"]
 
         if @@item.include?(item_to_add)
-          @@cart << item_to_add 
+          @@cart << item_to_add
           resp.write "added #{item_to_add}"
-        else 
+        else
           resp.write "We don't have that item"
     else
       resp.write "Path Not Found"
